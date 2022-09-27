@@ -1,0 +1,54 @@
+let perDetails = [
+  {
+     "name":"venkat",
+     "personalDetails":{
+        "studyDetails":[
+           {
+              "graduation":"Be",
+              "persentage":70
+           },
+           {
+              "secondhighetqualification":"Intermediate",
+              "persentage":90
+           },
+           {
+              "ssc":10,
+              "persentage":85,
+              "subjectsandpersentage":{
+                 "maths":70,
+                 "english":100
+              }
+           }
+        ]
+     }
+  }
+]
+let add=0;
+let arr = []
+perDetails.map((val)=>{
+  if(val.name){
+      arr.push(val.name)
+  }
+})
+console.log(arr)
+perDetails[0].personalDetails.studyDetails.map((val1)=>{
+  if(val1.graduation){
+      arr.push(val1.graduation)
+  }
+  if(val1.secondhighetqualification){
+      arr.push(val1.secondhighetqualification)
+  }
+  if(val1.persentage){
+      add+=val1.persentage
+  }
+  if(val1.ssc){
+      add+=val1.ssc
+  }
+  if(val1.subjectsandpersentage){
+      add+=val1.subjectsandpersentage.maths
+      add+=val1.subjectsandpersentage.english
+      // console.log(a2.subjectsandpersentage);
+  }
+})
+console.log(arr)
+console.log(add)

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Data Storage</title>
+</head>
+<body>
+    <form id="form" action="NewPage.html">
+        <label for="name">Name:</label>
+      <input type="text" name="name" id="name" /><br><br>
+      <label for="password">Password:</label>
+      <input type="password" name="password" id="password" /><br><br>
+      Roles:<select id="roles">
+        <option>Admin</option>
+        <option>Normal</option>
+      </select><br><br>
+  <button type="submit" onClick="saveData()" id="submit">Submit</button> 
+</form>
+</body>
+<script>
+    function saveData(){
+    let name=document.getElementById("name").value;
+    let password=document.getElementById("password").value;
+    let roles=document.getElementById("roles").value;
+    localStorage.setItem("name",name)
+    localStorage.setItem("password",password)
+    localStorage.setItem("roles",roles)
+    }
+</script>
+</html>

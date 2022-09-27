@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Data in Table</title>
+</head>
+<body>
+    <style>
+        form{
+  display:flex;
+  flex-direction:column;
+  width:35vw;
+}
+form input{
+  padding:0.7em 1em;
+}
+form span{
+  padding:0.6em 1em;
+}
+form > button{
+  padding:1.1em;
+  margin:1em 1em;
+  cursor:pointer;
+}
+ul{
+  list-style:none;
+  display:grid;
+  grid-template-columns:1fr 1fr 1fr;
+  justify-content:center;
+  width:25vw;
+
+}
+ul li{
+  padding:1em 2em .8em 2em;
+  border:1px solid black;
+
+}
+    </style>
+    <form action="#" id="formSubmission" method="get">
+        <span>Name</span>
+        <input type="Name" placeholder="enter your Name" id="name">
+        <span>Age</span>
+        <input type="number" placeholder="Age" id="age">
+        <span>State</span>
+        <input type="text" placeholder="Enter State" id="state">
+        <button type="submit">Submit</button>
+      </form>
+     <ul id="data">
+       <li>Name</li>
+       <li>Age</li>
+       <li>State</li>
+     </ul>
+</body>
+<script>
+    let form=document.getElementById("formSubmission");
+
+let table=document.getElementById('data');
+form.addEventListener("submit",(e)=>{
+  e.preventDefault();
+  submit();
+})
+const submit=()=>{
+  let name = document.getElementById("name").value;
+    let age = document.getElementById("age").value;
+    let state = document.getElementById("state").value;
+  let newArray = [name,age,state];
+  newArray.forEach((item)=>{
+  var li = document.createElement("li");
+  var text = document.createTextNode(item);
+  li.appendChild(text);
+  table.appendChild(li);
+  })
+  form.reset(); 
+}
+</script>
+</html>

@@ -1,0 +1,10 @@
+*{
+    background: rgb(90, 2, 71);
+}
+.navbar bg-light{
+    position: absolute;
+    top: -50px;
+}
+.container-fluid{
+color: white;
+}
